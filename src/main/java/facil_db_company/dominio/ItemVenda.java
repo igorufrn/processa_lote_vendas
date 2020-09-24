@@ -2,6 +2,21 @@ package facil_db_company.dominio;
 
 public class ItemVenda {
 	
+	
+	public ItemVenda() {}
+	public ItemVenda(String itemPedido) {
+		String[] dadosItem = itemPedido.split("-");
+		String idItem     = dadosItem[0];
+		String quantidade    = dadosItem[1];
+		String preco = dadosItem[2];		
+		
+		this.setIdItem(idItem);
+		this.setQuantidade(Long.valueOf(quantidade));
+		this.setPreco(Double.valueOf(preco));
+		
+	}
+	
+	
 	private String idItem;
 	private long quantidade;
 	private double preco;	

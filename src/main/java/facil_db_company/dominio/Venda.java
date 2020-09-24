@@ -20,16 +20,8 @@ public class Venda {
 		
 		List<ItemVenda> itensVenda = new ArrayList<ItemVenda>();
 		
-		for(String itemPedido : itens) {
-			String[] dadosItem = itemPedido.split("-");
-			String idItem     = dadosItem[0];
-			String quantidade    = dadosItem[1];
-			String preco = dadosItem[2];
-			
-			ItemVenda itemVenda = new ItemVenda();
-			itemVenda.setIdItem(idItem);
-			itemVenda.setQuantidade(Long.valueOf(quantidade));
-			itemVenda.setPreco(Double.valueOf(preco));
+		for(String itemPedido : itens) {			
+			ItemVenda itemVenda = new ItemVenda(itemPedido);			
 			itensVenda.add(itemVenda);
 		}						
 		
