@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>desafio</groupId>
+  <artifactId>facil_db_company</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>DasafioFacil</name>
+  <description>Um desafio muito fácil que me foi proposto pela DBC COMPANY. Estão de brincadeira!</description>
+  
+  <properties>	
+	<maven.compiler.source>1.8</maven.compiler.source>	
+	<maven.compiler.target>1.8</maven.compiler.target>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <!-- Building an executable jar -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+          <archive>
+            <manifest>             
+              <mainClass>facil_db_company.Principal</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
+  
+</project>
