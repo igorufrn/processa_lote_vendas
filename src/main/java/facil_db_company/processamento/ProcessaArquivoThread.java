@@ -83,12 +83,22 @@ public class ProcessaArquivoThread extends Thread {
 
 	private void geraArquivoSaida(int totalClientes, int totalVendedores, String idMaiorVenda,
 			Map<String, Double> totalVendasPorVendedor) throws FileNotFoundException {
+		
 		try (PrintStream out = new PrintStream(new FileOutputStream(this.arquivoDestino))) {
 		    out.println("Quantidade de clientes no arquivo de entrada = " + totalClientes);
 		    out.println("Quantidade de vendedor no arquivo de entrada = " + totalVendedores);
-		    out.println("ID da venda mais cara = " + idMaiorVenda);
-		    Stream<Map.Entry<String, Double>> sorted =	totalVendasPorVendedor.entrySet().stream().sorted(Map.Entry.comparingByValue());
-		    out.print("O pior vendedor = " + sorted.iterator().next().getKey());
+		    
+		    boolean temRegistrosDeVendas = idMaiorVenda != null && !idMaiorVenda.isEmpty();		    
+		    		    
+		    if(temRegistrosDeVendas) {
+		    	out.println("ID da venda mais cara = " + idMaiorVenda);
+		    	Stream<Map.Entry<String, Double>> sorted =	totalVendasPorVendedor.entrySet().stream().sorted(Map.Entry.comparingByValue());
+			    out.print("O pior vendedor = " + sorted.iterator().next().getKey());
+		    } else {
+		    	out.println("ID da venda mais cara = NAO TEM REGISTROS DE VENDAS NESTE ARQUIVO, LOGO NAO HA MELHOR VENDA");
+		    	out.print("O pior vendedor = NAO TEM REGISTROS DE VENDAS NESTE ARQUIVO, LOGO NAO HA PIOR VENDEDOR");
+		    }
+		    
 		}
 	}	
 	
