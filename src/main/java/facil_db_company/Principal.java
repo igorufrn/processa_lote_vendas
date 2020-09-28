@@ -9,7 +9,7 @@ import facil_db_company.processamento.ProcessaArquivoThread;
 //Isto foi muito trivial 
 public class Principal {
 	
-	private static long INTERVALO_MILISEGUNDOS_VERIFICACAO_DIRETORIO_ENTRADA = 1;
+	private static long INTERVALO_MILISEGUNDOS_VERIFICACAO_DIRETORIO_ENTRADA = 1000;
 	
 	public static void main(String[] args ) throws InterruptedException {
 		System.setProperty("file.encoding","UTF-8");
